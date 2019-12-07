@@ -1,0 +1,22 @@
+.logo{
+  height:40px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+body{
+  background: #343A40;
+}
+#main{
+  background: #343A40;
+}
+#view{
+  background:#222222;
+  width:50%;
+  margin:0 auto;
+}
+h2{
+	color:white;
+}
+p{
+	color: white;
+}

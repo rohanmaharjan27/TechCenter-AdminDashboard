@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800');
+
+body{
+    font-family: 'Alegreya Sans',sans-serif;
+    overflow-x:hidden;
+}
+.sidenav{
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #111;
+    opacity: .9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.7s;
+}
+.sidenav a{
+    display: block;
+    padding:20px 30px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #ccc;
+}
+.sidenav a:hover{
+    color:#fff;
+    transition: 0.4s;
+}
+.sidenav .close{
+    position: absolute;
+    top: 0;
+    right:22px;
+    margin-left: 50px;
+    font-size: 15px;
+}
+.slide a{
+    color: #000;
+    font-size:20px;
+}
+#content{
+    padding: 20px;
+    transition: margin-left 0.7s;
+}
+.col-md-4{
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  -moz-box-shadow: 0 0 5px 5px #888;
+  -webkit-box-shadow: 0 0 5px 5px#888;
+  box-shadow: 0 0 5px 5px #888;"
+}
+table, td, th {
+  border: 1px solid black;
+}
+#search{
+    margin-right: auto;
+    margin-left: auto;
+}

@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="shortcut icon" href="images/logo.png" />
+
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="index.html"><img class="logo-img" src="images/logo.png" alt="logo"></a><span class="splash-description">TechCenter - Login</span></div>
+            <div class="card-body">
+                <form class="form signin" method="POST">
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="email" type="text"  required="required" placeholder="Enter Email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="password" type="password" required="required" placeholder="Enter Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    var tok = localStorage.getItem('token');
+    console.log(tok);
+    var uid=localStorage.getItem('uid');
+    var usertype=localStorage.getItem('usertype');
+    
+    $("form.signin").on("submit",function(e){
+        e.preventDefault();
+        var email = $("#email").val();
+        var password = $("#password").val();
+
+        var data = {
+            email: email,
+            password:password,
+        };
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8000/users/login",
+            data: data,
+            async:false,
+            success: function(responseData, textStatus, jqXHR) {
+                if(responseData.token!=null){
+                    localStorage.setItem('token', responseData.token);
+                localStorage.setItem('uid',responseData.user._id);
+                localStorage.setItem('usertype',responseData.user.usertype);
+                var usertype=responseData.user.usertype;
+                if (usertype=="admin") {
+                    location.href="admin-dashboard.html";
+                }
+                else if(usertype="user"){
+                    alert("Admin Login Only!")
+                    location.href="login.html";
+
+                }
+                }
+                
+            else{
+                alert(responseData.message);
+            
+            }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+                alert(errorThrown);
+                window.location.reload();
+            }
+        });
+    });
+    
+</script>
+</body>
+ 
+</html>

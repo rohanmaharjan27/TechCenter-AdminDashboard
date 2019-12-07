@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add Product</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo.png" />
+
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="js/style.js"></script>
+  	<script src="js/tokencheckadmin.js"></script> 
+	<script src="js/addproduct.js"></script>
+	<script src="js/logout.js"></script>
+	
+</head>
+<body>
+	<div id="content">
+    <span class="slide">
+        <a href="#" onclick="openSlideMenu()">
+            <i class="fas fa-bars"></i>
+        </a>
+    </span>
+
+    <div id="menu" class="sidenav">
+        <a href="#" class="close" onclick="closeSlideMenu()">
+             <i class="fas fa-times"></i>
+        </a>
+
+        <a href="admin-dashboard.html">Dashboard</a>
+       <a href="add-product.html">Add Product</a>
+       <a href="view-products.html">View Products</a>
+       <a href="view-users.html">View Users</a>
+       <a href="view-orders.html">View Orders</a>
+       <a id="logout" href="#">Logout</a>
+    </div>
+
+<div class="main" align="center">
+		<h2 align="center">Add Product</h2>
+
+			<div class="custom-file col-sm-4" align="center">
+
+				<form class="form" enctype="multipart/form-data" id="productImage">
+					<div id="img_display"></div>
+					<input type="file" id="productImageName" name="files">
+				</form>
+			</div>
+			<br>
+			<br>
+		<form class="form addProductForm">
+
+			<div class="form-group col-sm-4" align="center">
+				<label for="productName">Product Name</label>
+				<input type="text" class="form-control" id="productName" placeholder="Enter product name" name="productName"  required>
+			</div>
+			<div class="form-group col-sm-4" align="center">
+				<label for="productPrice">Product Price</label>
+				<input type="text" class="form-control" id="productPrice" placeholder="Enter product price in USD" name="productPrice" required>
+			</div>
+			<div class="form-group col-sm-4" align="center">
+				<label for="productDescription">Product Description</label>
+				<input type="text" class="form-control" id="productDescription" placeholder="Enter product description" name="productDescription" required>
+			</div>
+			<div class="form-group col-sm-4" align="center">
+				<label for="productPrice">Product Manufacturer</label>
+				<input type="text" class="form-control" id="productPrice" placeholder="Enter product manufacturer" name="productManufacturer" required>
+			</div>
+
+
+				<div class="form-group col-sm-4" align="center">
+					<label class="mr-sm-2" for="productCategory">Category</label>
+					<select class="custom-select mr-sm-2" id="productCategory" name="productCategory" align="center">
+						<option value="Mouse">Mouse</option>
+						<option value="Keyboard">Keyboard</option>
+						<option value="CPU">CPU</option>
+						<option value="GPU">GPU</option>
+						<option value="RAM">RAM</option>
+						<option value="Motherboard">Motherboard</option>
+						<option value="Laptop">Laptop</option>
+						<option value="Storage">Storage</option>
+						<option value="Cooler">Cooler</option>
+						<option value="Monitor">Monitor</option>
+						<option value="Headset">Headset</option>
+						<option value="Desktop">Desktop</option>
+					</select>
+				</div>
+			<div class="form-group col-sm-4" align="center">
+				<button id="add" type="submit" name="submit" class="btn btn-primary my-2">Add Product</button>
+			</div>
+		</form>
+	</div>
+         
+</div>
+</body>
+</html> 
