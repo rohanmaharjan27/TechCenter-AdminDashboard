@@ -1,11 +1,11 @@
 $(document).ready(function() { 
 	  
     var tok=localStorage.getItem('token');
-    var user_type=localStorage.getItem('usertype');
+    var usertype=localStorage.getItem('usertype');
 
     $.ajax({
     type:'get',
-    url:'http://localhost:8080/users/check',
+    url:'http://localhost:8000/users/check',
     beforeSend:function(xhr){
     if(tok && usertype=="admin"){
         xhr.setRequestHeader('Authorization','Bearer '+tok);

@@ -24,7 +24,7 @@
                   products+="<td align='center'>"+res[index].product_quantity +"</td>";
                   products+="<td align='center'>"+res[index].product_price +"</td>";
                   
-                  products+="<td align='center'><img src='http://localhost:8000/"+res[index].product_imagename+"' alt='product image' width='100px' height='80px'></td>";
+                  products+="<td align='center'><img src='http://localhost:8000/images/"+res[index].product_imagename+"' alt='product image' width='100px' height='90px'></td>";
                   products+="<td align='center'>"+res[index].payment_type +"</td>";
                   products+="<td align='center'>"+res[index].date +"</td>";
                   products+="<td align='center'>"+res[index].status +"</td>";

@@ -24,7 +24,7 @@ $(document).ready(function() {
                   products+="<td>"+res[index].product_category +"</td>";
                   products+="<td>"+res[index].product_description +"</td>";
                   products+="<td>"+res[index].product_manufacturer +"</td>";
-                  products+="<td><img src='http://localhost:8000/"+res[index].product_imagename+"' alt='product image' width='100px' height='80px'></td>";
+                  products+="<td><img src='http://localhost:8000/images/"+res[index].product_imagename+"' alt='product image' width='100px' height='90px'></td>";
                   products+="<td>"+res[index].product_rating +"</td>"
                   products+="<td><a class='btn btn-primary' href='update-product.html?id="+res[index]._id+"'>Update</a></td>";
                   products+="<td><p><button id='delete' class='btn btn-primary' value="+res[index]._id+">Delete</button></p></td></tr>";

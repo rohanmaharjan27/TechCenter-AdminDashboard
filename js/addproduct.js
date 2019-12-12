@@ -36,6 +36,7 @@ $(document).ready(function(){
         var prodName=$("#productName").val();
         var prodPrice=$("#productPrice").val();
         var productDescription=$("#productDescription").val();
+        var productManufacturer=$("#productManufacturer").val();
         var prodCategory=$("#productCategory").val();
         var prodImageName=imageFile;
  
