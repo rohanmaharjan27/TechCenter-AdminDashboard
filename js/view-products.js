@@ -13,8 +13,7 @@ $(document).ready(function() {
                   products+="<th scope='col' class='text-center'>Description</th>";
                   products+="<th scope='col' class='text-center'>Manufacturer</th>";
                   products+="<th scope='col' class='text-center'>Image</th>";
-                  products+="<th scope='col' class='text-center'>Rating</th>";
-                  products+="<th scope='col' class='text-center' colspan='2'>Action</th></tr>";
+                  products+="<th scope='col' class='text-center'>Action</th></tr>";
                   products+="</thead>";  
                                      
                 $.each(res, function(index) { 
@@ -25,8 +24,6 @@ $(document).ready(function() {
                   products+="<td>"+res[index].product_description +"</td>";
                   products+="<td>"+res[index].product_manufacturer +"</td>";
                   products+="<td><img src='http://localhost:8000/images/"+res[index].product_imagename+"' alt='product image' width='100px' height='90px'></td>";
-                  products+="<td>"+res[index].product_rating +"</td>"
-                  products+="<td><a class='btn btn-primary' href='update-product.html?id="+res[index]._id+"'>Update</a></td>";
                   products+="<td><p><button id='delete' class='btn btn-primary' value="+res[index]._id+">Delete</button></p></td></tr>";
                 })
 

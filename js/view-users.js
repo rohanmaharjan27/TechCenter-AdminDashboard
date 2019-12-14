@@ -22,7 +22,7 @@ $(document).ready(function() {
                   users+="<td align='center'>"+res[index].address +"</td>";
                   users+="<td align='center'>"+res[index].email +"</td>";  
                   users+="<td align='center'>"+res[index].password +"</td>";
-                  users+="<td align='center'><img src='http://localhost:8080/user-images/"+res[index].userimagename+"' alt='product image' width='100px' height='80px'></td>";
+                  users+="<td align='center'><img src='http://localhost:8000/user-images/"+res[index].userimagename+"' alt='user image' width='100px' height='80px'></td>";
                 })
 
                 users+="</tbody>";
